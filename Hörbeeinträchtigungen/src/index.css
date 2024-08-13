@@ -1,0 +1,12 @@
+/* Custom CSS for centering container with margins */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+.container {
+  margin-top: auto;
+  margin-bottom: auto;
+}

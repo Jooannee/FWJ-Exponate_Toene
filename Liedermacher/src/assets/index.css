@@ -1,0 +1,89 @@
+/* Custom CSS for centering container with margins */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+.container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+svg,
+canvas {
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.note-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 60px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+#timeline .note-button {
+  width: 50px;
+  height: 50px;
+  color: transparent; /* Hide text in timeline */
+}
+
+/* Add this to your index.css or other CSS file */
+.horizontal-layout {
+  display: flex;
+  justify-content: space-between;
+}
+.left-column {
+  margin-right: 40px !important;
+}
+
+.horizontal-layout .left-column,
+.horizontal-layout .right-column {
+  flex: 1;
+  margin: 10px;
+}
+
+.horizontal-layout .right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-layout .right-column > div {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1820px;
+  }
+}
+
+#spectogramdiv > div > div {
+  margin-top: 35px !important;
+}

@@ -1,0 +1,37 @@
+/* Custom CSS for centering container with margins */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+.container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+svg,
+canvas {
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.btn-group-vertical {
+  position: fixed;
+  left: 0;
+  top: 150px; /* Adjust as needed */
+  z-index: 1000;
+  width: 105px;
+}
+.btn-group-vertical > button {
+  border: 1px solid black !important;
+}
+@media (min-width: 576px) and (max-width: 1100px) {
+  .container,
+  .container-sm {
+    max-width: 98%;
+    padding-left: 145px;
+  }
+}
+#spectogramdiv > div > div {
+  margin-top: 35px !important;
+}
