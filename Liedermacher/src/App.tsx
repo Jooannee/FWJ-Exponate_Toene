@@ -478,7 +478,30 @@ function App() {
     setTimeline([]);
   };
 
+  const sendStartEvent = () => {
+    const body = {
+      gameName: "liedermacher",
+      event: "tonAbspielen",
+    };
+
+    fetch("http://localhost:3000/event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   const playSound = () => {
+    sendStartEvent();
     window.globalPlayOscillator(waveform, amplitude, frequency, 1.5);
   };
 
@@ -835,9 +858,7 @@ function App() {
           className="btn btn-primary"
           onClick={() => setIsInEditorMode(!isInEditorMode)}
         >
-          {isInEditorMode
-            ? "Hören-Modus 🔊"
-            : "Lieder erstellen Modus ✏"}
+          {isInEditorMode ? "Hören-Modus 🔊" : "Lieder erstellen Modus ✏"}
         </button>
         <Modal
           show={showModal}

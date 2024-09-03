@@ -78,7 +78,7 @@ cd ..
 
 
 
-mv statistics-server/dist/server server
+mv statistics-server/dist/server server.exe
 
 # zip the three zip files and the server executable all together
-tar -czvf win-build.tar.gz McGurk-Effekt.tar.gz Hörbeeinträchtigungen.tar.gz Instrumenten-Ratespiel.tar.gz Töne-Hannovers.tar.gz Liedermacher.tar.gz Hörtest.tar.gz server
+tar -czvf win-build.tar.gz McGurk-Effekt.tar.gz Hörbeeinträchtigungen.tar.gz Instrumenten-Ratespiel.tar.gz Töne-Hannovers.tar.gz Liedermacher.tar.gz Hörtest.tar.gz server.exe

@@ -44,6 +44,28 @@ function App() {
 
   const videoNumbers = map.map((_, i) => i + 1);
 
+  const sendStartEvent = () => {
+    const body = {
+      gameName: "töne-hannovers",
+      event: "videoPlay",
+    };
+
+    fetch("http://localhost:3000/event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   const drawCanvasWrapper = (
     canvasRef: React.RefObject<HTMLCanvasElement>,
     xAxis: string,
@@ -207,7 +229,10 @@ function App() {
                       selectedVideo === number ? "#7eb6ff" : "#bde2fe",
                     color: "black",
                   }}
-                  onClick={() => setSelectedVideo(number)}
+                  onClick={() => {
+                    setSelectedVideo(number);
+                    sendStartEvent();
+                  }}
                 >
                   {map[number - 1]}
                 </button>
