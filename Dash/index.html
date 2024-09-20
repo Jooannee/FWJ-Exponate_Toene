@@ -14,11 +14,22 @@
     <h1>Title Placeholder</h1>
   </header>
 
+  <script>
+    function startApp(id){
+      const { ipcRenderer } = require('electron');
+      
+      let data = {}
+      let event = "Request-App"+id.toString();
+
+      ipcRenderer.send(event, data);
+    }
+  </script>
+
   <body>
     <div class="buttonPanel">
       <div class="buttonRow">
         <div class="buttonWrapper">
-          <button type="button">1.1</button>
+          <button type="button" onclick="console.log('Hi')">1.1</button>
         </div>
         <div class="buttonWrapper">
           <button type="button">1.2</button>

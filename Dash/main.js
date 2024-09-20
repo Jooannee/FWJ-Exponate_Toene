@@ -16,6 +16,7 @@ app.on('ready', () => {
         // }
     });
     mainWindow.loadFile('index.html');
+    mainWindow.webContents.openDevTools();
 
     mainWindow.setAlwaysOnTop(true)
     mainWindow.moveTop()
