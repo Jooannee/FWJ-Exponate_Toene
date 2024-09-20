@@ -9,12 +9,16 @@ app.on('ready', () => {
         width: 1920,
         height: 1080,
         kiosk: true,
+        fullscreen: true,
         frame: false,
         // webPreferences: {
         //     preload: path.join(__dirname, 'preload.js')
         // }
     });
     mainWindow.loadFile('index.html');
+
+    mainWindow.setAlwaysOnTop(true)
+    mainWindow.moveTop()
 
     // Prevent window from closing
     // mainWindow.on('close', (event) => {
@@ -26,11 +30,13 @@ app.on('ready', () => {
         if (!mainWindow.isKiosk()) {
             mainWindow.setKiosk(true); // Re-enter kiosk mode if it is exited
         }
+        mainWindow.setFullScreen(true);
     });
     mainWindow.on('leave-full-screen', () => {
         if (!mainWindow.isKiosk()) {
             mainWindow.setKiosk(true); // Re-enter kiosk mode if it is exited
         }
+        mainWindow.setFullScreen(true);
     });
 });
 
