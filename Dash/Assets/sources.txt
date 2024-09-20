@@ -1,0 +1,2 @@
+sun/moon.svg - lucide.dev/icons
+Placeholder - https://www.svgrepo.com/svg/508699/landscape-placeholder
