@@ -1,0 +1,14 @@
+{
+    "name": "Toene-Dashboard",
+    "version": "1.0.0",
+    "description": "A Dashboard to access the different Toene apps",
+    "main": "main.js",
+    "author": "JDeppe",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^32.1.1"
+    }
+}
