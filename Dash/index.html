@@ -2,8 +2,6 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link href="style.css" rel="stylesheet">
     <title>Title Placeholder</title>
   </head>
@@ -15,11 +13,12 @@
   </header>
 
   <script>
+    const ipcRenderer = require("electron").ipcRenderer;
     function startApp(id){
-      const { ipcRenderer } = require('electron');
-      
-      let data = {}
-      let event = "Request-App"+id.toString();
+      console.log(id)
+      let data = {ID: id}
+      console.log(data["ID"])
+      let event = "Request-App";
 
       ipcRenderer.send(event, data);
     }
@@ -29,25 +28,25 @@
     <div class="buttonPanel">
       <div class="buttonRow">
         <div class="buttonWrapper">
-          <button type="button" onclick="console.log('Hi')">1.1</button>
+          <button type="button" onclick="startApp(0)">Hörbeeinträchtigungen Exponat</button>
         </div>
         <div class="buttonWrapper">
-          <button type="button">1.2</button>
+          <button type="button" onclick="startApp(1)">Hörtest Exponat</button>
         </div>
         <div class="buttonWrapper">
-          <button type="button">1.3</button>
+          <button type="button" onclick="startApp(4)">McGurk Effekt Exponat</button>
         </div>
       </div>
 
       <div class="buttonRow">
         <div class="buttonWrapper">
-          <button type="button">2.1</button>
+          <button type="button" onclick="startApp(2)">Instrumente Ratespiel Exponat</button>
         </div>
         <div class="buttonWrapper">
-          <button type="button">2.2</button>
+          <button type="button" onclick="startApp(3)">Liedermacher Exponat</button>
         </div>
         <div class="buttonWrapper">
-          <button type="button">2.3</button>
+          <button type="button" onclick="startApp(5)">Töne Hannovers Exponat</button>
         </div>
       </div>
     </div>

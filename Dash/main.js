@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path')
 
 let mainWindow;
@@ -11,15 +11,12 @@ app.on('ready', () => {
         kiosk: true,
         fullscreen: true,
         frame: false,
-        // webPreferences: {
-        //     preload: path.join(__dirname, 'preload.js')
-        // }
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
     });
     mainWindow.loadFile('index.html');
-    mainWindow.webContents.openDevTools();
-
-    mainWindow.setAlwaysOnTop(true)
-    mainWindow.moveTop()
 
     // Prevent window from closing
     // mainWindow.on('close', (event) => {
@@ -44,3 +41,8 @@ app.on('ready', () => {
 app.on('window-all-closed', (event) => {
     event.preventDefault(); // Prevent the app from quitting when all windows are closed
 });
+
+ipcMain.on("Request-App", (event, args) => {
+    url = "http://localhost:400" + args["ID"]
+    mainWindow.loadURL(url);
+})
