@@ -14,17 +14,24 @@
 
   <script>
     const ipcRenderer = require("electron").ipcRenderer;
+    const remote = require("electron").remote;
     function startApp(id){
-      console.log(id)
       let data = {ID: id}
-      console.log(data["ID"])
       let event = "Request-App";
+
+      ipcRenderer.send(event, data);
+    }
+    function closeApp(){
+      let data = {}
+      let event = "Request-Quit"
 
       ipcRenderer.send(event, data);
     }
   </script>
 
   <body>
+    <button type="button" onclick="closeApp()" class="quitButton"> 🚫 </button>
+
     <div class="buttonPanel">
       <div class="buttonRow">
         <div class="buttonWrapper">

@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path')
 
 let mainWindow;
+let passWindow;
 
 //Create the main BrowserWindow once the electron app is ready
 app.on('ready', () => {
@@ -16,26 +17,8 @@ app.on('ready', () => {
             contextIsolation: false
         }
     });
+    mainWindow.webContents.openDevTools();
     mainWindow.loadFile('index.html');
-
-    // Prevent window from closing
-    // mainWindow.on('close', (event) => {
-    //     event.preventDefault(); // Prevents the window from closing
-    //     // Potentially add password/other authentication to allow closing, rather than disabling.
-    // });
-    // Handle resize or full-screen change events if needed
-    mainWindow.on('resize', () => {
-        if (!mainWindow.isKiosk()) {
-            mainWindow.setKiosk(true); // Re-enter kiosk mode if it is exited
-        }
-        mainWindow.setFullScreen(true);
-    });
-    mainWindow.on('leave-full-screen', () => {
-        if (!mainWindow.isKiosk()) {
-            mainWindow.setKiosk(true); // Re-enter kiosk mode if it is exited
-        }
-        mainWindow.setFullScreen(true);
-    });
 });
 
 app.on('window-all-closed', (event) => {
@@ -46,3 +29,37 @@ ipcMain.on("Request-App", (event, args) => {
     url = "http://localhost:400" + args["ID"]
     mainWindow.loadURL(url);
 })
+
+function createPasswordWindow() {
+    passwordWindow = new BrowserWindow({
+        width: 300,
+        height: 300,
+        modal: true, // To make it appear on top of the main window
+        parent: mainWindow, // Reference to your main window
+        webPreferences: {
+            nodeIntegration: true, // Depends on your Electron setup
+            contextIsolation: false, // Allows ipcRenderer in renderer
+        }
+    });
+    passwordWindow.loadFile('password.html'); // The HTML file for the password prompt
+
+    passwordWindow.on('closed', () => {
+        passwordWindow = null;
+    });
+}
+
+ipcMain.on("Request-Quit", (event, args) => {
+    createPasswordWindow();
+})
+ipcMain.on("submit-password", (event, password) => {
+    const pass = "abc123";
+    
+    if (password === pass) {
+        if(passwordWindow) {
+            passwordWindow.close();
+        }
+        app.quit(); // Quit the app if the password is correct
+    } else {
+        event.reply('password-result', 'Incorrect password');
+    }
+});
