@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")"
 
 concurrently \
 "cd Hörbeeinträchtigungen && npm run dev" \

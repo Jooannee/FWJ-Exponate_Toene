@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")"
 
 npm install --global yarn
 npm install --global @yao-pkg/pkg
