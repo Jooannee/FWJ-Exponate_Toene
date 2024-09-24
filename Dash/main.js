@@ -4,6 +4,7 @@ const WebSocket = require("ws");
 
 
 let mainWindow;
+let passwordWindow;
 
 //Create the main BrowserWindow once the electron app is ready
 app.on('ready', () => {
@@ -46,8 +47,8 @@ ipcMain.on("Request-App", (event, args) => {
 
 function createPasswordWindow() {
     passwordWindow = new BrowserWindow({
-        width: 300,
-        height: 300,
+        width: 1150,
+        height: 500,
         frame: false,
         modal: true, // To make it appear on top of the main window
         parent: mainWindow, // Reference to your main window
@@ -57,7 +58,6 @@ function createPasswordWindow() {
         }
     });
     passwordWindow.loadFile('password.html'); // The HTML file for the password prompt
-
     passwordWindow.on('closed', () => {
         passwordWindow = null;
     });
@@ -67,7 +67,7 @@ ipcMain.on("Request-Quit", (event, args) => {
 })
 //Check whether the password is correct when it is submitted and quit if it is.
 ipcMain.on("submit-password", (event, password) => {
-    const pass = "abc123";
+    const pass = "123";
     
     if (password === pass) {
         if(passwordWindow) {
