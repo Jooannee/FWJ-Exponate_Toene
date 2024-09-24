@@ -49,7 +49,6 @@ function createPasswordWindow() {
     passwordWindow = new BrowserWindow({
         width: 1150,
         height: 500,
-        frame: false,
         modal: true, // To make it appear on top of the main window
         parent: mainWindow, // Reference to your main window
         webPreferences: {
@@ -57,6 +56,7 @@ function createPasswordWindow() {
             contextIsolation: false, // Allows ipcRenderer in renderer
         }
     });
+    passwordWindow.removeMenu();
     passwordWindow.loadFile('password.html'); // The HTML file for the password prompt
     passwordWindow.on('closed', () => {
         passwordWindow = null;
