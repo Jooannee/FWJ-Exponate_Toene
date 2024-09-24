@@ -2,7 +2,6 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path')
 
 let mainWindow;
-let passWindow;
 
 //Create the main BrowserWindow once the electron app is ready
 app.on('ready', () => {
@@ -21,10 +20,7 @@ app.on('ready', () => {
     mainWindow.loadFile('index.html');
 });
 
-app.on('window-all-closed', (event) => {
-    event.preventDefault(); // Prevent the app from quitting when all windows are closed
-});
-
+//Switch to an app when receiving the correct IPC event
 ipcMain.on("Request-App", (event, args) => {
     url = "http://localhost:400" + args["ID"]
     mainWindow.loadURL(url);
@@ -47,10 +43,10 @@ function createPasswordWindow() {
         passwordWindow = null;
     });
 }
-
 ipcMain.on("Request-Quit", (event, args) => {
     createPasswordWindow();
 })
+//Check whether the password is correct when it is submitted and quit if it is.
 ipcMain.on("submit-password", (event, password) => {
     const pass = "abc123";
     
