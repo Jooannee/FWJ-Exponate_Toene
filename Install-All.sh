@@ -4,7 +4,7 @@ npm install --global yarn
 npm install --global @yao-pkg/pkg
 npm install --global electron
 npm install --global ws
-
+npm install --global concurrently
 
 
 cd Hörbeeinträchtigungen
