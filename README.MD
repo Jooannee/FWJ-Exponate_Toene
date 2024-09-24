@@ -1,47 +1,31 @@
-## Anleitung für die Benutzung der Exponate
+## Installation and Use Instructions
+### Installation
+1. Download all Files
+   1. For advanced users use Git/Wget
+   2. Otherwise use the Code>Download Zip option in the GitHub repository and unzip the files
+2. Run the "Install-All.sh" file (Since 2020 this is only possible from within a terminal)
+   1. Open a terminal (Ctrl+Alt+T or use the launcher or rightclick>Open in Terminal)
+   2. Drag and Drop the file into the terminal
+   3. Press Enter
+### Usage
+1. Run the "Start-All.sh" file
+### Notes
+- The exhibit "Hörtest" requires 100% system volume, however it can't be changed once the dashboard is launched, so make sure to set systemvolume to the maximum before launching
+- The app can only be quit using the button in the bottom right of the dashboard. The standard password to exit is 123, but it can be changed in the Dash/main.js file
 
-1. Das Betriebssystem auswählen. Die Exponate sind einmal für Windows und einmal für Ubuntu-Linux basierende Systeme kompiliert. Ich empfehle stark den Gebrauch von Pop! OS wenn Linux verwendet wird, da dieses Betriebssystem die Iiyama Touchscreens sowie eine Touch-Tastatur unterstützt, bei anderen Distributionen gab es Probleme. 
+## Anleitung zur Installation und Benutzung der Exponate
 
-2. (Optional) Den server starten um statistische Daten zu sammeln
+### Installation
+1. Alle Dateien herunterladen
+    1. Für fortgeschrittene Benutzer über Git/Wget
+    2. Sonst über GitHub>Code>Download Zip und entpacken
 
-3. Die Programme Ausführen. Bei Linux das "run-EXPONATENNAME.sh" script ausführen, bei Windows die EXPONATENNAME.exe 
-
-4. Um das Programm zu maximieren, auf das Zahlrad-Symbol oben rechts klicken und "Vollbild an" auswählen. Hier kann auch die Ausrichtung angepasst werden, je nachdem der Monitor Senkrecht oder Wegerecht ist. Es wird auch angezeigt, ob der Server online ist (dieser ist nur lokal).
-
-
-**Speziell für das Exponat Hörtest: Die System-Lautstärkeeinstellungen auf dem PC müssen auf 100% gestellt werden, sonst misst das Exponat nicht korrekt.**
-
-
-## Wenn Änderungen im Quellcode vorgenommen wurden, so muss dieser neu Kompiliert werden
-
-Wenn Windows verwendet wird, muss zuerst die Möglichkeit bestehen, bash-Skripte auszuführen. bash kann hier (https://git-scm.com/download/win) heruntergeladen und installiert werden.
-
-Anschließend wird node (https://nodejs.org/en) benötigt, um diese Anwendungen auszuführen und zu kompilieren. Es wird empfohlen, node mit nvm zu installieren. Eine Anleitung zum Herunterladen und Installieren von nvm gibt es hier (https://github.com/nvm-sh/nvm).
-
-Sobald nvm installiert ist, können die folgenden Befehle ausgeführt werden, um die benötigte node-Version herunterzuladen und zu verwenden (Administratorrechte könnten erforderlich sein):
-
-```
-nvm install 20.11.0
-nvm use 20.11.0
-```
-
-
-Wenn node installiert ist, müssen yarn und pkg als globale Pakete verfügbar sein. Diese können mit npm, einem in node enthaltenen Paketmanager, installiert werden:
-
-```
-npm install --global yarn
-npm install --global @yao-pkg/pkg
-```
-
-Nun ist alles vorhanden, um diese Anwendungen zu kompilieren. Es gibt sowohl Linux- als auch Windows-Skripte, um dies zu tun.
-
-Windows:
-Das Skript kann entweder durch Doppelklicken auf win-build.sh oder durch Ausführen von .\win-build.sh in einem bash-Terminal gestartet werden.
-
-Linux:
-Zuerst müssen die Ausführungsrechte für das Skript festgelegt werden, danach kann es ausgeführt werden:
-
-```
-sudo chmod +x build.sh
-./build.sh
-```
+2. Die "Install-All.sh" Datei ausführen (Dies ist seit 2020 nur noch über das terminal möglich)
+    1. Terminal Öffnen (Str+Alt+T oder über den launcher oder rechtsklick>In Terminal öffnen)
+    2. Datei ins Terminal ziehen
+    3. Enter drücken
+### Benutzung
+1. Die "Start-All.sh" Datei ausführen
+### Hinweise
+- Die System-Lautstärkeeinstellungen auf dem PC müssen auf 100% gestellt werden, sonst misst das Exponat Hörtest nicht korrekt.
+- Die app kann nur über den button unten rechts im dashboard mit einem Passwort geschlossen werden. Das Standard Passwort ist 123 aber dieses kann in der Dash/Main.js Datei verändert werden.
