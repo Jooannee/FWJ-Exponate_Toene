@@ -35,7 +35,6 @@ app.on('ready', () => {
             contextIsolation: false
         }
     });
-    mainWindow.webContents.openDevTools();
     mainWindow.loadFile('index.html');
 });
 
