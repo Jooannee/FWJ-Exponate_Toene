@@ -49,6 +49,7 @@ function createPasswordWindow() {
     passwordWindow = new BrowserWindow({
         width: 300,
         height: 300,
+        frame: false,
         modal: true, // To make it appear on top of the main window
         parent: mainWindow, // Reference to your main window
         webPreferences: {
