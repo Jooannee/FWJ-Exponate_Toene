@@ -55,6 +55,40 @@ function App() {
     setStage(1);
   };
 
+  const [message, setMessage] = useState(''); // To store messages from the server
+  const [ws, setWs] = useState<WebSocket | null>(null); // WebSocket connection
+  
+  // Setup WebSocket connection on component mount
+  useEffect(() => {
+    const socket = new WebSocket('ws://localhost:8080'); // Connect to WebSocket server
+  
+    socket.onopen = () => {
+      console.log('Connected to WebSocket server');
+      setWs(socket); // Save the socket connection for later use
+    };
+  
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log('Message from server:', data.message);
+      setMessage(data.message); // Store the message from the server
+    };
+  
+    socket.onclose = () => {
+      console.log('WebSocket connection closed');
+    };
+  
+    return () => {
+      socket.close(); // Clean up connection on component unmount
+    };
+  }, []);
+  
+  // Function to handle button click and send redirection message to Electron
+  const handleRedirect = () => {
+    if (ws) {
+      ws.send(JSON.stringify({ type: 'redirect', url: 'index.html' }));
+    }
+  };
+
   useEffect(() => {
     if (stage === 2) {
       const resultsAndAnswers: Record<string, string> = {};
@@ -283,11 +317,23 @@ function App() {
         }}
       />
       <div>
-        <button
+      <button
           style={{
             position: "fixed",
             right: 10,
             top: 10,
+            zIndex: 1000, // Ensure it's above other content
+          }}
+          className="btn btn-dark"
+          onClick={handleRedirect}
+        >
+          🏠
+        </button>
+        <button
+          style={{
+            position: "fixed",
+            right: 10,
+            top: 60,
             zIndex: 1000, // Ensure it's above other content
           }}
           onClick={() => setShowModal(true)}
@@ -298,7 +344,7 @@ function App() {
           style={{
             position: "fixed",
             right: 10,
-            top: 60,
+            top: 110,
             zIndex: 1000, // Ensure it's above other content
           }}
           onClick={() => setShowCreditsModal(true)}

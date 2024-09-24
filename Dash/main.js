@@ -1,10 +1,29 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path')
+const WebSocket = require("ws");
+
 
 let mainWindow;
 
 //Create the main BrowserWindow once the electron app is ready
 app.on('ready', () => {
+    const wss = new WebSocket.Server({ port: 8080 });
+
+    wss.on('connection', (ws) => {
+      console.log('Client connected to WebSocket');
+  
+      // Listen for messages from the Vite frontend
+      ws.on('message', (message) => {
+        console.log('Received:', message);
+        const data = JSON.parse(message);
+  
+        // Handle redirection if message type is 'redirect'
+        if (data.type === 'redirect') {
+          mainWindow.loadFile("index.html");
+        }
+      });
+    });
+
     mainWindow = new BrowserWindow({
         width: 1920,
         height: 1080,
