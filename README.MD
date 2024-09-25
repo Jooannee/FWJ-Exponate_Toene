@@ -1,12 +1,24 @@
 ## Installation and Use Instructions
 ### Installation
-1. Download all Files
+1. Install NodeJS by running the following commands in a terminal:
+```
+sudo apt update
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+```
+Close and reopen the terminal
+```
+nvm install 20
+nvm use 20
+```
+2. Download all Files
    1. For advanced users use Git/Wget
    2. Otherwise use the Code>Download Zip option in the GitHub repository and unzip the files
-2. Run the "Install-All.sh" file (Since 2020 this is only possible from within a terminal)
+3. Run the "Install-All.sh" file (Since 2020 this is only possible from within a terminal)
    1. Open a terminal (Ctrl+Alt+T or use the launcher or rightclick>Open in Terminal)
    2. Drag and Drop the file into the terminal
    3. Press Enter
+   4. Enter your password when prompted (It won't be displayed while typing, that's normal.)
 ### Usage
 1. Run the "Start-All.sh" file
 ### Notes
@@ -16,14 +28,26 @@
 ## Anleitung zur Installation und Benutzung der Exponate
 
 ### Installation
-1. Alle Dateien herunterladen
+1. NodeJS mit den folgenden commands im Terminal installieren:
+```
+sudo apt update
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+```
+Close and reopen the terminal
+```
+nvm install 20
+nvm use 20
+```
+2. Alle Dateien herunterladen
     1. Für fortgeschrittene Benutzer über Git/Wget
     2. Sonst über GitHub>Code>Download Zip und entpacken
 
-2. Die "Install-All.sh" Datei ausführen (Dies ist seit 2020 nur noch über das terminal möglich)
+3. Die "Install-All.sh" Datei ausführen (Dies ist seit 2020 nur noch über das terminal möglich)
     1. Terminal Öffnen (Str+Alt+T oder über den launcher oder rechtsklick>In Terminal öffnen)
     2. Datei ins Terminal ziehen
     3. Enter drücken
+    4. Bei der Aufforderung das Passwort eingeben (Dieses wird während dem Tippen nicht angezeigt)
 ### Benutzung
 1. Die "Start-All.sh" Datei ausführen
 ### Hinweise
