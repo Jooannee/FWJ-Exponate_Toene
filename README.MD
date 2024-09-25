@@ -3,7 +3,8 @@
 1. Install NodeJS by running the following commands in a terminal:
 ```
 sudo apt update
-sudo apt install nvm
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 Close and reopen the terminal
 ```
@@ -29,9 +30,10 @@ nvm use 20
 1. NodeJS mit den folgenden commands im Terminal installieren:
 ```
 sudo apt update
-sudo apt install nvm
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
-Das Terminal schließen und wieder öffnen
+Close and reopen the terminal
 ```
 nvm install 20
 nvm use 20
