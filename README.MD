@@ -18,6 +18,7 @@ nvm use 20
    1. Open a terminal (Ctrl+Alt+T or use the launcher or rightclick>Open in Terminal)
    2. Drag and Drop the file into the terminal
    3. Press Enter
+   4. Enter your password when prompted (It won't be displayed while typing, that's normal.)
 ### Usage
 1. Run the "Start-All.sh" file
 ### Notes
@@ -46,6 +47,7 @@ nvm use 20
     1. Terminal Öffnen (Str+Alt+T oder über den launcher oder rechtsklick>In Terminal öffnen)
     2. Datei ins Terminal ziehen
     3. Enter drücken
+    4. Bei der Aufforderung das Passwort eingeben (Dieses wird während dem Tippen nicht angezeigt)
 ### Benutzung
 1. Die "Start-All.sh" Datei ausführen
 ### Hinweise
