@@ -9,4 +9,5 @@ concurrently \
 "cd Liedermacher && npm run dev" \
 "cd McGurk-Effekt && npm run dev" \
 "cd Töne-Hannovers && npm run dev" \
+"cd statistics-server && npm run dev" \
 "cd Dash && npm start"
