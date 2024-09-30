@@ -6,24 +6,21 @@ sudo apt update
 sudo apt install curl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
-Close and reopen the terminal
+Close and reopen the terminal, run the 2 following commands:
 ```
-nvm install 20
-nvm use 20
+nvm install latest
+nvm use latest
 ```
 2. Download all Files
-   1. For advanced users use Git/Wget
+   1. For advanced users use Git
    2. Otherwise use the Code>Download Zip option in the GitHub repository and unzip the files
-3. Run the "Install-All.sh" file (Since 2020 this is only possible from within a terminal)
-   1. Open a terminal (Ctrl+Alt+T or use the launcher or rightclick>Open in Terminal)
-   2. Drag and Drop the file into the terminal
-   3. Press Enter
-   4. Enter your password when prompted (It won't be displayed while typing, that's normal.)
+3. Run the "Install-All.sh" file (Right Click > Run as a Program)
 ### Usage
-1. Run the "Start-All.sh" file
+1. Run the "Start-All.sh" file (Right Click > Run as a Program)
 ### Notes
 - The exhibit "Hörtest" requires 100% system volume, however it can't be changed once the dashboard is launched, so make sure to set systemvolume to the maximum before launching
 - The app can only be quit using the button in the bottom right of the dashboard. The standard password to exit is 123, but it can be changed in the Dash/main.js file
+- The stats-server isn't quit properly by using the button. Either restart the machine when wanting to reopen the dash or run `pkill -f node` in a terminal before continuing.
 
 ## Anleitung zur Installation und Benutzung der Exponate
 
@@ -34,22 +31,19 @@ sudo apt update
 sudo apt install curl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
-Close and reopen the terminal
+Das Terminal schließen und wieder öffnen, und die folgenden Commands ausführen:
 ```
 nvm install 20
 nvm use 20
 ```
 2. Alle Dateien herunterladen
-    1. Für fortgeschrittene Benutzer über Git/Wget
+    1. Für fortgeschrittene Benutzer über Git
     2. Sonst über GitHub>Code>Download Zip und entpacken
 
-3. Die "Install-All.sh" Datei ausführen (Dies ist seit 2020 nur noch über das terminal möglich)
-    1. Terminal Öffnen (Str+Alt+T oder über den launcher oder rechtsklick>In Terminal öffnen)
-    2. Datei ins Terminal ziehen
-    3. Enter drücken
-    4. Bei der Aufforderung das Passwort eingeben (Dieses wird während dem Tippen nicht angezeigt)
+3. Die "Install-All.sh" Datei ausführen (Rechtsclick > Als Programm Ausführen)
 ### Benutzung
-1. Die "Start-All.sh" Datei ausführen
+1. Die "Start-All.sh" Datei ausführen (Rechtsclick > Als Programm Ausführen)
 ### Hinweise
 - Die System-Lautstärkeeinstellungen auf dem PC müssen auf 100% gestellt werden, sonst misst das Exponat Hörtest nicht korrekt.
 - Die app kann nur über den button unten rechts im dashboard mit einem Passwort geschlossen werden. Das Standard Passwort ist 123 aber dieses kann in der Dash/Main.js Datei verändert werden.
+- Der Statistik-Server wird beim schließen nicht vernünftig beendet. Wenn das dashboard nach dem schließen wieder geöffnet werden soll, entweder erst das System neustarten oder in einem Terminal `pkill -f node` ausführen.
