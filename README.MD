@@ -8,8 +8,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 Close and reopen the terminal, run the 2 following commands:
 ```
-nvm install latest
-nvm use latest
+nvm install 20
+nvm use 20
 ```
 2. Download all Files
    1. For advanced users use Git

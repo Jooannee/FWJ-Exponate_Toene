@@ -402,7 +402,7 @@ function App() {
             top: 60,
             zIndex: 1000, // Ensure it's above other content
           }}
-          className="btn btn-primary"
+          className="btn btn-dark"
           onClick={() => setShowModal(true)}
         >
           ⚙
@@ -414,7 +414,7 @@ function App() {
             top: 110,
             zIndex: 1000, // Ensure it's above other content
           }}
-          className="btn btn-primary"
+          className="btn btn-dark"
           onClick={() => setShowCreditsModal(true)}
         >
           📃
