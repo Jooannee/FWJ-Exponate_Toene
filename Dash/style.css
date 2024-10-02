@@ -20,6 +20,8 @@ button {
     border: none;
     overflow: hidden;
     outline: none;
+
+    font-size: large;
 }
 
 header {
@@ -98,14 +100,8 @@ body{
 
 .logoToene {
     float: right;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     padding-right: 30px;
 }
 
-.logoIDMP {
-    float: left;
-    width: 100px;
-    height: 100px;
-    padding-left: 30px;
-}
