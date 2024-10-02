@@ -421,7 +421,7 @@ function App() {
         </button>
         <Modal show={showModal}>
           <button
-            className="btn btn-secondary"
+            className="btn btn-primary"
             onClick={() => setIsVertical(!isVertical)}
           >
             Ausrichtung einstellen {isVertical ? "↕" : "↔"}

@@ -529,6 +529,7 @@ const App: React.FC = () => {
             top: 60,
             zIndex: 1000, // Ensure it's above other content
           }}
+          className="btn btn-dark"
           onClick={() => setShowModal(true)}
         >
           ⚙
@@ -540,6 +541,7 @@ const App: React.FC = () => {
             top: 110,
             zIndex: 1000, // Ensure it's above other content
           }}
+          className="btn btn-dark"
           onClick={() => setShowCreditsModal(true)}
         >
           📃
