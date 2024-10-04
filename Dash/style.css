@@ -21,7 +21,8 @@ button {
     overflow: hidden;
     outline: none;
 
-    font-size: large;
+    font-size: x-large;
+    font-weight: 700;
 }
 
 header {
@@ -34,6 +35,13 @@ header {
     position: absolute;
     left: 100px;
     top: 30px;
+    font-weight: bold;
+}
+
+.subTitle {
+    position: absolute;
+    left: 100px;
+    top: 80px;
     font-weight: bold;
 }
 
@@ -94,8 +102,8 @@ body{
     height: 60px;
     
     position: fixed;
-    right: 50px;
-    bottom: 50px;
+    right: 0px;
+    bottom: 0px;
     z-index: 1000;
 
     font-size:xx-large;
@@ -108,3 +116,27 @@ body{
     padding-right: 30px;
 }
 
+.logoIDMP {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+}
+
+.logoLUH {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    bottom: 50px;
+    left: 160px;
+}
+
+.creditsLUH {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 50px;
+}
