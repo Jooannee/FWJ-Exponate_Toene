@@ -30,8 +30,11 @@ header {
     top: 15px;
 }
 
-h1 {
-    text-align: center;
+.title {
+    position: absolute;
+    left: 100px;
+    top: 30px;
+    font-weight: bold;
 }
 
 body{
