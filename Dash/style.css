@@ -20,6 +20,9 @@ button {
     border: none;
     overflow: hidden;
     outline: none;
+
+    font-size: x-large;
+    font-weight: 700;
 }
 
 header {
@@ -28,8 +31,18 @@ header {
     top: 15px;
 }
 
-h1 {
-    text-align: center;
+.title {
+    position: absolute;
+    left: 100px;
+    top: 30px;
+    font-weight: bold;
+}
+
+.subTitle {
+    position: absolute;
+    left: 100px;
+    top: 80px;
+    font-weight: bold;
 }
 
 body{
@@ -89,8 +102,8 @@ body{
     height: 60px;
     
     position: fixed;
-    right: 50px;
-    bottom: 50px;
+    right: 0px;
+    bottom: 0px;
     z-index: 1000;
 
     font-size:xx-large;
@@ -98,14 +111,32 @@ body{
 
 .logoToene {
     float: right;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     padding-right: 30px;
 }
 
 .logoIDMP {
-    float: left;
-    width: 100px;
-    height: 100px;
-    padding-left: 30px;
+    width: 136px;
+    height: 95px;
+
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+}
+
+.logoLUH {
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    bottom: 0px;
+    left: 180px;
+}
+
+.creditsLUH {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 50px;
 }
