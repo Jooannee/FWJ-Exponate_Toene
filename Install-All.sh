@@ -51,4 +51,5 @@ echo "Please enter your password to complete the installation (Changing file per
 sudo chown root:root node_modules/electron/dist/chrome-sandbox
 sudo chmod 4755 node_modules/electron/dist/chrome-sandbox
 
-read "Installation complete, press enter to exit."
+echo "Installation complete, press enter to exit."
+read
