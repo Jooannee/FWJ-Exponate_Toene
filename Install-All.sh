@@ -6,35 +6,38 @@ export NVM_DIR="$HOME/.nvm"
 
 cd "$(dirname "$0")"
 
-npm install --global yarn
-npm install --global @yao-pkg/pkg
-npm install --global electron
-npm install --global ws
-npm install --global concurrently
+echo $(date +%d%t%b%t%Y%t%T%t%:z) > Install.log
+
+npm install --global yarn >> Install.log
+npm install --global @yao-pkg/pkg >> Install.log
+npm install --global electron >> Install.log
+npm install --global ws >> Install.log
+npm install --global concurrently >> Install.log
 
 
 cd Hörbeeinträchtigungen
-yarn
+yarn >> Install.log
 
 cd ../Hörtest
-yarn
+yarn >> Install.log
 
 cd ../Instrumenten-Ratespiel
-yarn
+yarn >> Install.log
 
 cd ../Liedermacher
-yarn
+yarn >> Install.log
 
 cd ../McGurk-Effekt
-yarn
+yarn >> Install.log
 
 cd ../Töne-Hannovers
-yarn
+yarn >> Install.log
 
 cd ../statistics-server
-yarn
+yarn >> Install.log
 
 cd ../Dash
-npm link ws
+npm link ws >> Install.log
+
 sudo chown root:root node_modules/electron/dist/chrome-sandbox
 sudo chmod 4755 node_modules/electron/dist/chrome-sandbox
